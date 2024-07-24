@@ -1,0 +1,48 @@
+# System cache files
+.DS_Store
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Tools cache directories
+.swc/
+.temp/
+.rn_temp/
+.temp/
+.cache/
+coverage
+deploy_versions/
+
+# Output of 'npm pack'
+*.tgz
+
+# Local configuration files
+*.local
+
+# Build output directories and files
+.next
+
+metadata.d.ts
+
+build/
+dist
+dist-ssr/
