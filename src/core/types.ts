@@ -48,10 +48,18 @@ export interface ModalInstance {
   remove: () => void;
 }
 
+export interface ModalOpenOptions {
+  modalId?: UniqueId;
+}
+
 export interface ModalManager {
   store: Store<ModalManagerState>;
 
-  open: <P>(Modal: ControlledModalComponent<P>, props: P | null) => ModalInstance;
+  open: <P>(
+    Modal: ControlledModalComponent<P>,
+    props: P | null,
+    options?: ModalOpenOptions,
+  ) => ModalInstance;
 
   close: (id: ModalInstance['id']) => void;
 

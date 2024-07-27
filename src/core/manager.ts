@@ -19,9 +19,9 @@ export function createModalManager(): ModalManager {
   const mm: ModalManager = {
     store,
 
-    open(Modal, props) {
+    open(Modal, props, options) {
       const Component = Modal as ControlledModalComponent<unknown>;
-      const id = resolveModalId(Modal);
+      const id = options?.modalId || resolveModalId(Modal);
       const modals = store.getState().modals;
       let modal = modals[id];
       if (modal && modal?.visible) {
