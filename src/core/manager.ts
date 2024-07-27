@@ -4,7 +4,7 @@ import type { ControlledModalComponent, ModalManager, ModalOperation } from './t
 
 const MODAL_ID_ATTRIBUTE = '__mc_modal_id__';
 
-function resolveModalId(Modal: ControlledModalComponent<unknown>) {
+function resolveModalId(Modal: ControlledModalComponent<any>) {
   if (MODAL_ID_ATTRIBUTE in Modal) {
     return Modal[MODAL_ID_ATTRIBUTE] as string;
   }
@@ -20,6 +20,7 @@ export function createModalManager(): ModalManager {
     store,
 
     open(Modal, props) {
+      const Component = Modal as ControlledModalComponent<unknown>;
       const id = resolveModalId(Modal);
       const modals = store.getState().modals;
       let modal = modals[id];
@@ -29,7 +30,7 @@ export function createModalManager(): ModalManager {
       modal = {
         id,
         at: Date.now(),
-        Modal,
+        Modal: Component,
         props: props || undefined,
         visible: true,
         promise: createPromise<ModalOperation>(),

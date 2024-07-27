@@ -2,7 +2,12 @@ import type { FunctionComponent } from 'react';
 
 export type UniqueId = string;
 
-export type ControlledModalComponent<P> = FunctionComponent<P>;
+export type ControlledModalProps<P = unknown> = P & {
+  modalManager: ModalManager;
+  modalState: ModalState | null;
+};
+
+export type ControlledModalComponent<P> = FunctionComponent<ControlledModalProps<P>>;
 
 export interface Store<T> {
   getState: () => T;
@@ -17,7 +22,7 @@ export interface ControlledPromise<T> {
   reject: (reason: any) => void;
 }
 
-export interface ModalOperation<T = unknown> {
+export interface ModalOperation<T = any> {
   type: 'close' | 'remove';
   payload: T;
 }
@@ -32,26 +37,21 @@ export interface ModalState {
   props: Record<string, any> | undefined;
 }
 
-interface ModalManagerState {
+export interface ModalManagerState {
   modals: Record<UniqueId, ModalState>;
 }
 
-interface ModalInstance {
+export interface ModalInstance {
   id: ModalState['id'];
   promise: ModalState['promise']['instance'];
   close: () => void;
   remove: () => void;
 }
 
-type ModalProps<T> = T extends ControlledModalComponent<infer P> ? P : unknown;
-
 export interface ModalManager {
   store: Store<ModalManagerState>;
 
-  open: <
-    M extends ControlledModalComponent<unknown>,
-    P = ModalProps<M>,
-  >(Modal: M, props: P | null) => ModalInstance;
+  open: <P>(Modal: ControlledModalComponent<P>, props: P | null) => ModalInstance;
 
   close: (id: ModalInstance['id']) => void;
 

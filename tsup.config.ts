@@ -8,6 +8,7 @@ const common: Options = {
   splitting: false,
   sourcemap: true,
   dts: true,
+  treeshake: true,
 };
 
 export default defineConfig([
