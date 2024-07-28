@@ -56,7 +56,11 @@ export default eslint(
     },
   },
   {
-    files: ['tsconfig.json'],
+    files: [
+      'tsconfig.json',
+      'playground/tsconfig.json',
+      'playground/tsconfig.*.json',
+    ],
     rules: {
       'jsonc/sort-keys': 'off',
     },
