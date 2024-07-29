@@ -31,6 +31,8 @@ export interface ModalState {
   id: UniqueId;
   at: number;
   visible: boolean;
+  mounted: boolean;
+  waitingForMount: boolean;
   promise: ControlledPromise<ModalOperation>;
 
   Modal: ControlledModalComponent<unknown>;
