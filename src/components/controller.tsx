@@ -10,7 +10,6 @@ import type { ControlledModalComponent, ModalInstance } from '../core/types';
 export interface ModalControllerRef<P = unknown> {
   open: (props?: Partial<P>) => ModalInstance;
   close: (payload?: any) => void;
-  remove: () => void;
 }
 
 export type ModalControllerProps<P = unknown> = Partial<P> & {
@@ -22,8 +21,14 @@ function useModalId() {
   return modalId;
 }
 
+function createUnremovableModalManager() {
+  const mm = createModalManager();
+  mm.remove = mm.close;
+  return mm;
+}
+
 function useModalManager() {
-  const [mm] = useState(createModalManager);
+  const [mm] = useState(createUnremovableModalManager);
   return mm;
 }
 
@@ -42,9 +47,6 @@ export const ModalController = forwardRef<ModalControllerRef, ModalControllerPro
       },
       close() {
         modalManager.close(modalId);
-      },
-      remove() {
-        modalManager.remove(modalId);
       },
     }), [Modal, modalId, modalManager]);
 
