@@ -59,7 +59,7 @@ export interface ModalManager {
 
   open: <P>(
     Modal: ManagedModalComponent<P>,
-    props: P | null,
+    props?: P,
     options?: ModalOpenOptions,
   ) => ModalInstance;
 
