@@ -12,13 +12,13 @@ export type {
 export { ModalManagerContext, ModalStateContext } from './components/context';
 
 export { createModal } from './components/helper';
-export type { ControlledModalComponent, ControlledModalProps } from './core/types';
+export type { ManagedModalComponent, ManagedModalProps } from './core/types';
 
-export { ModalPlacement } from './components/placement';
-export type { ModalPlacementProps } from './components/placement';
+export { ModalStackPlacement } from './components/placement';
+export type { ModalStackPlacementProps } from './components/placement';
 
 export { ModalController } from './components/controller';
 export type { ModalControllerProps, ModalControllerRef } from './components/controller';
 
-export { useManagerState, useManagerModals } from './hooks/manager';
+export { useManagerState, useManagerModalStack } from './hooks/manager';
 export { useModal } from './hooks/modal';

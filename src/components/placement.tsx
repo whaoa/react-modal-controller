@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { useManagerModals } from '../hooks/manager';
+import { useManagerModalStack } from '../hooks/manager';
 
 import type { ModalManager } from '../core/types';
 
-export interface ModalPlacementProps {
+export interface ModalStackPlacementProps {
   modalManager: ModalManager;
 }
 
-export function ModalPlacement(props: ModalPlacementProps) {
+export function ModalStackPlacement(props: ModalStackPlacementProps) {
   const { modalManager } = props;
 
-  const modals = useManagerModals(modalManager);
+  const modals = useManagerModalStack(modalManager);
 
   return (
     <>

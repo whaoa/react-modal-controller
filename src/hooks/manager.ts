@@ -10,7 +10,7 @@ export function useManagerState(mm: ModalManager) {
   );
 }
 
-export function useManagerModals(mm: ModalManager) {
+export function useManagerModalStack(mm: ModalManager) {
   const state = useManagerState(mm);
   return useMemo(
     () => Object.values(state.modals).sort((a, b) => a.at - b.at),

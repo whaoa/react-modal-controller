@@ -1,4 +1,4 @@
-import { ModalPlacement } from '@whaoa/react-modal-manager';
+import { ModalStackPlacement } from '@whaoa/react-modal-manager';
 
 import { mm } from './modals/mm';
 import { MuiDialogView } from './modals/mui';
@@ -16,7 +16,7 @@ function App() {
       </div>
 
       <div>
-        <ModalPlacement modalManager={mm} />
+        <ModalStackPlacement modalManager={mm} />
       </div>
     </div>
   );

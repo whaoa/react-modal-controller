@@ -1,10 +1,10 @@
 import { createId, createPromise, createStore } from './utils';
 
-import type { ControlledModalComponent, ModalManager, ModalOperation, UniqueId } from './types';
+import type { ManagedModalComponent, ModalManager, ModalOperation, UniqueId } from './types';
 
 const MODAL_ID_ATTRIBUTE = '__mc_modal_id__';
 
-function resolveModalId(Modal: ControlledModalComponent<any>) {
+function resolveModalId(Modal: ManagedModalComponent<any>) {
   if (MODAL_ID_ATTRIBUTE in Modal) {
     return Modal[MODAL_ID_ATTRIBUTE] as string;
   }
@@ -20,7 +20,7 @@ export function createModalManager(): ModalManager {
     store,
 
     open(Modal, props, options) {
-      const Component = Modal as ControlledModalComponent<unknown>;
+      const Component = Modal as ManagedModalComponent<unknown>;
       const id = options?.modalId || resolveModalId(Modal);
       const modals = store.getState().modals;
       let modal = modals[id];

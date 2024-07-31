@@ -4,7 +4,7 @@ import { act, fireEvent, getByRole, queryByRole, render, screen } from '@testing
 import { createModalManager } from '../src/core/manager';
 import { useModal } from '../src/hooks/modal';
 import { createModal } from '../src/components/helper';
-import { ModalPlacement } from '../src/components/placement';
+import { ModalStackPlacement } from '../src/components/placement';
 import { ModalController } from '../src/components/controller';
 
 import type { ModalControllerRef } from '../src/components/controller';
@@ -36,7 +36,7 @@ it('mount ModalPlacement component', () => {
 
   render(
     <div role={elementId}>
-      <ModalPlacement modalManager={mm} />
+      <ModalStackPlacement modalManager={mm} />
     </div>,
   );
 
@@ -97,7 +97,7 @@ it('mount ModalController component', () => {
   };
 
   render(
-    <ModalController ref={modalControllerCallbackRef} controlledModal={ControlledModal} />,
+    <ModalController ref={modalControllerCallbackRef} modal={ControlledModal} />,
   );
 
   expect(controller).not.toBeNull();

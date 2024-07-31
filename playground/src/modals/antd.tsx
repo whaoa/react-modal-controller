@@ -51,7 +51,7 @@ export function AntdControlledModalView() {
         Open Controlled Antd Modal
       </Button>
 
-      <ModalController ref={modalRef} controlledModal={Modal} description={`ant-design controlled modal (at ${datetime})`} />
+      <ModalController ref={modalRef} modal={Modal} description={`ant-design controlled modal (at ${datetime})`} />
     </>
   );
 }

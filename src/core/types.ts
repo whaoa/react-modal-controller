@@ -2,12 +2,12 @@ import type { FunctionComponent } from 'react';
 
 export type UniqueId = string;
 
-export type ControlledModalProps<P = unknown> = P & {
+export type ManagedModalProps<P = unknown> = P & {
   modalManager: ModalManager;
   modalState: ModalState | null;
 };
 
-export type ControlledModalComponent<P> = FunctionComponent<ControlledModalProps<P>>;
+export type ManagedModalComponent<P> = FunctionComponent<ManagedModalProps<P>>;
 
 export interface Store<T> {
   getState: () => T;
@@ -35,7 +35,7 @@ export interface ModalState {
   waitingForMount: boolean;
   promise: ControlledPromise<ModalOperation>;
 
-  Modal: ControlledModalComponent<unknown>;
+  Modal: ManagedModalComponent<unknown>;
   props: Record<string, any> | undefined;
 }
 
@@ -58,7 +58,7 @@ export interface ModalManager {
   store: Store<ModalManagerState>;
 
   open: <P>(
-    Modal: ControlledModalComponent<P>,
+    Modal: ManagedModalComponent<P>,
     props: P | null,
     options?: ModalOpenOptions,
   ) => ModalInstance;

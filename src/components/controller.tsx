@@ -5,7 +5,7 @@ import { createModalManager } from '../core/manager';
 import { useManagerModal } from '../hooks/manager';
 
 import type { ReactNode, RefAttributes } from 'react';
-import type { ControlledModalComponent, ModalInstance } from '../core/types';
+import type { ManagedModalComponent, ModalInstance } from '../core/types';
 
 export interface ModalControllerRef<P = unknown> {
   open: (props?: Partial<P>) => ModalInstance;
@@ -13,7 +13,7 @@ export interface ModalControllerRef<P = unknown> {
 }
 
 export type ModalControllerProps<P = unknown> = Partial<P> & {
-  controlledModal: ControlledModalComponent<P>;
+  modal: ManagedModalComponent<P>;
 };
 
 function useModalId() {
@@ -34,7 +34,7 @@ function useModalManager() {
 
 export const ModalController = forwardRef<ModalControllerRef, ModalControllerProps>(
   (props, ref) => {
-    const { controlledModal: Modal, ...otherProps } = props;
+    const { modal: Modal, ...otherProps } = props;
 
     const modalId = useModalId();
     const modalManager = useModalManager();

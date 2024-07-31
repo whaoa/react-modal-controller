@@ -5,9 +5,9 @@ import { markModalComponentAsMounted, markModalComponentAsUnmounted } from '../c
 import { ModalManagerContext, ModalStateContext } from './context';
 
 import type { ComponentType } from 'react';
-import type { ControlledModalComponent } from '../core/types';
+import type { ManagedModalComponent } from '../core/types';
 
-export function createModal<T>(Modal: ComponentType<T>): ControlledModalComponent<T> {
+export function createModal<T>(Modal: ComponentType<T>): ManagedModalComponent<T> {
   return function ControlledModal(props) {
     const { modalManager, modalState, ...otherProps } = props;
 
