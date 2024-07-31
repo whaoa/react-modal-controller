@@ -63,7 +63,7 @@ export interface ModalManager {
     options?: ModalOpenOptions,
   ) => ModalInstance;
 
-  close: (id: ModalInstance['id']) => void;
+  close: (id: ModalInstance['id'], payload?: any) => void;
 
-  remove: (id: ModalInstance['id']) => void;
+  remove: (id: ModalInstance['id'], payload?: any) => void;
 }

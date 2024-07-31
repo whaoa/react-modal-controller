@@ -48,20 +48,20 @@ export function createModalManager(): ModalManager {
       };
     },
 
-    close(id) {
+    close(id, payload) {
       const modals = store.getState().modals;
       let modal = modals[id];
       if (modal) {
-        modal.promise.resolve({ type: 'close', payload: null });
+        modal.promise.resolve({ type: 'close', payload: payload || null });
         modal = { ...modal, visible: false, waitingForMount: false };
         store.setState({ modals: { ...modals, [id]: modal } });
       }
     },
 
-    remove(id) {
+    remove(id, payload) {
       let modals = store.getState().modals;
       if (modals[id]) {
-        modals[id].promise.resolve({ type: 'remove', payload: null });
+        modals[id].promise.resolve({ type: 'remove', payload: payload || null });
         modals = { ...modals };
         delete modals[id];
         store.setState({ modals });

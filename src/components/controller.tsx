@@ -45,8 +45,8 @@ export const ModalController = forwardRef<ModalControllerRef, ModalControllerPro
       open(args) {
         return modalManager.open(Modal, (args || null) as any, { modalId });
       },
-      close() {
-        modalManager.close(modalId);
+      close(payload) {
+        modalManager.close(modalId, payload);
       },
     }), [Modal, modalId, modalManager]);
 
