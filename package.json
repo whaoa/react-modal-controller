@@ -5,8 +5,17 @@
   "author": "whaoa",
   "license": "MIT",
   "homepage": "https://github.com/whaoa/react-modal-manager#readme",
-  "repository": "https://github.com/whaoa/react-modal-manager.git",
-  "bugs": "https://github.com/whaoa/react-modal-manager/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whaoa/react-modal-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whaoa/react-modal-manager/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "keywords": [
     "react",
     "modal",
