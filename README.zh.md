@@ -15,6 +15,9 @@
   <a href="https://github.com/whaoa/react-modal-manager/releases">
     <img alt="Version" src="https://img.shields.io/github/package-json/v/whaoa/react-modal-manager/main?style=flat&label=version">
   </a>
+  <a href="https://bundlephobia.com/package/@whaoa-libs/react-modal-manager">
+    <img alt="Bundle Size" src="https://img.shields.io/bundlephobia/minzip/%40whaoa-libs%2Freact-modal-manager?label=bundle%20size">
+  </a>
 </p>
 
 <p align="center">
