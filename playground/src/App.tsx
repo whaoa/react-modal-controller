@@ -1,4 +1,4 @@
-import { ModalStackPlacement } from '@whaoa/react-modal-manager';
+import { ModalStackPlacement } from '@whaoa-libs/react-modal-manager';
 
 import { mm } from './modals/mm';
 import { MuiDialogView } from './modals/mui';

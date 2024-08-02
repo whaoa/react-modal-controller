@@ -57,13 +57,13 @@ so you should use it with other modal components (Modal / Dialog provided by UI 
 
 ```sh
 # with npm
-npm install @whaoa/react-modal-manager
+npm install @whaoa-libs/react-modal-manager
 
 # or with pnpm
-pnpm add @whaoa/react-modal-manager
+pnpm add @whaoa-libs/react-modal-manager
 
 # or with yarn
-yarn add @whaoa/react-modal-manager
+yarn add @whaoa-libs/react-modal-manager
 ```
 
 ## Create ModalManager And Modal Component
@@ -77,7 +77,7 @@ it accepts a component that can read the current modal's state and API via `useM
 
 ```tsx
 // @filename: './modal.tsx'
-import { createModal, createModalManager } from '@whaoa/react-modal-manager';
+import { createModal, createModalManager } from '@whaoa-libs/react-modal-manager';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -125,7 +125,7 @@ and the second (optional) is the props passed to the component.
 PS: You can call `ModalManager.open` from anywhere, including outside of React.
 
 ```tsx
-import { ModalStackPlacement } from '@whaoa/react-modal-manager';
+import { ModalStackPlacement } from '@whaoa-libs/react-modal-manager';
 
 import { Modal, mm } from './modal';
 
@@ -203,11 +203,11 @@ and can be opened and closed via the component's ref.
 
 ```tsx
 import { useEffect, useRef, useState } from 'react';
-import { ModalController } from '@whaoa/react-modal-manager';
+import { ModalController } from '@whaoa-libs/react-modal-manager';
 
 import { Modal } from './modal';
 
-import type { ModalControllerRef } from '@whaoa/react-modal-manager';
+import type { ModalControllerRef } from '@whaoa-libs/react-modal-manager';
 
 export function App() {
   const modalRef = useRef<ModalControllerRef<{ content?: string }>>();

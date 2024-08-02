@@ -1,3 +1,3 @@
-import { createModalManager } from '@whaoa/react-modal-manager';
+import { createModalManager } from '@whaoa-libs/react-modal-manager';
 
 export const mm = createModalManager();

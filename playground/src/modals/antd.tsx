@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
-import { ModalController, createModal, useModal } from '@whaoa/react-modal-manager';
+import { ModalController, createModal, useModal } from '@whaoa-libs/react-modal-manager';
 import { Button, Modal as Dialog } from 'antd';
 
 import { mm } from './mm';
 
-import type { ModalControllerRef } from '@whaoa/react-modal-manager';
+import type { ModalControllerRef } from '@whaoa-libs/react-modal-manager';
 
 const Modal = createModal((props: { description?: string }) => {
   const { description } = props;

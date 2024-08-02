@@ -1,4 +1,4 @@
-import { createModal, useModal } from '@whaoa/react-modal-manager';
+import { createModal, useModal } from '@whaoa-libs/react-modal-manager';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';

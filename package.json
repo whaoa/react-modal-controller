@@ -1,5 +1,5 @@
 {
-  "name": "@whaoa/react-modal-manager",
+  "name": "@whaoa-libs/react-modal-manager",
   "version": "0.0.0",
   "description": "A lightweight modal manager for React.",
   "author": "whaoa",

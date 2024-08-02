@@ -53,13 +53,13 @@
 
 ```sh
 # with npm
-npm install @whaoa/react-modal-manager
+npm install @whaoa-libs/react-modal-manager
 
 # or with pnpm
-pnpm add @whaoa/react-modal-manager
+pnpm add @whaoa-libs/react-modal-manager
 
 # or with yarn
-yarn add @whaoa/react-modal-manager
+yarn add @whaoa-libs/react-modal-manager
 ```
 
 ## 创建 ModalManager 和 Modal
@@ -71,7 +71,7 @@ yarn add @whaoa/react-modal-manager
 
 ```tsx
 // @filename: './modal.tsx'
-import { createModal, createModalManager } from '@whaoa/react-modal-manager';
+import { createModal, createModalManager } from '@whaoa-libs/react-modal-manager';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -117,7 +117,7 @@ export const Modal = createModal((props: { content?: string }) => {
 提示：你可以在任何位置调用 `ModalManager.open`，包括 React 外部。
 
 ```tsx
-import { ModalStackPlacement } from '@whaoa/react-modal-manager';
+import { ModalStackPlacement } from '@whaoa-libs/react-modal-manager';
 
 import { Modal, mm } from './modal';
 
@@ -193,11 +193,11 @@ Modal 将会被直接渲染到 `ModalController` 所在位置，而不经过 `Mo
 
 ```tsx
 import { useEffect, useRef, useState } from 'react';
-import { ModalController } from '@whaoa/react-modal-manager';
+import { ModalController } from '@whaoa-libs/react-modal-manager';
 
 import { Modal } from './modal';
 
-import type { ModalControllerRef } from '@whaoa/react-modal-manager';
+import type { ModalControllerRef } from '@whaoa-libs/react-modal-manager';
 
 export function App() {
   const modalRef = useRef<ModalControllerRef<{ content?: string }>>();
