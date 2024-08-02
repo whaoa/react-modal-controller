@@ -1,6 +1,6 @@
 {
   "name": "@whaoa-libs/react-modal-manager",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A lightweight modal manager for React.",
   "author": "whaoa",
   "license": "MIT",
